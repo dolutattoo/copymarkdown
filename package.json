@@ -4,7 +4,7 @@
   "description": "Prepare a markdown code embedd. Usefull for sharing code on discord for example.",
   "repository": {"type": "git", "url": "https://github.com/dolutattoo/copymarkdown", "directory": "extension"},
   "icon": "copymarkdown_logo.png",
-  "version": "2.0.4",
+  "version": "2.1.0",
   "publisher": "Dolu",
   "engines": {
     "vscode": "^1.82.0"

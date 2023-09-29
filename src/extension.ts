@@ -1,25 +1,22 @@
 import * as vscode from 'vscode';
+import * as path from 'path';
 
-export function activate(context: vscode.ExtensionContext) {
-    let copyMarkdown = vscode.commands.registerCommand('extension.copyMarkdown', async () => {
-        let editor = vscode.window.activeTextEditor;
+export async function activate(context: vscode.ExtensionContext) {
+    const copyMarkdown = vscode.commands.registerCommand('extension.copyMarkdown', async () => {
+        const editor = vscode.window.activeTextEditor;
 
-        if (editor) {
-            let document = editor.document;
-            let selection = editor.selection;
-            let selectedText = document.getText(selection);
-            let fileExtension = "";
-            const fileName = document.fileName;
+        if (!editor) return;
 
-            if (fileName.split('.').length > 1) {
-                fileExtension = fileName.split('.').pop() as string;
-            }
+        const document = editor.document;
+        const selection = editor.selection;
+        const selectedText = document.getText(selection);
 
-            let modifiedText = `\`\`\`${fileExtension}\n${selectedText}\n\`\`\``;
+        const fileExtension = path.extname(document.fileName).slice(1);
 
-            vscode.env.clipboard.writeText(modifiedText);
-            vscode.window.showInformationMessage('Code copied to clipboard');
-        }
+        const modifiedText = `\`\`\`${fileExtension}\n${selectedText}\n\`\`\``;
+
+        await vscode.env.clipboard.writeText(modifiedText);
+        vscode.window.showInformationMessage('Code copied to clipboard');
     });
 
     context.subscriptions.push(copyMarkdown);
