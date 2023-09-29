@@ -1,10 +1,10 @@
 {
   "name": "copymarkdown",
   "displayName": "CopyMarkdown",
-  "description": "Prepare a markdown code embedd. Usefull for sharing code on discord for example.",
+  "description": "Format the selection as markdown code and copy it to your clipboard.",
   "repository": {"type": "git", "url": "https://github.com/dolutattoo/copymarkdown", "directory": "extension"},
   "icon": "copymarkdown_logo.png",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "publisher": "Dolu",
   "engines": {
     "vscode": "^1.82.0"
