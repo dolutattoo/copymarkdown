@@ -1,10 +1,10 @@
 {
-  "name": "copywithticks",
-  "displayName": "CopyWithTicks",
+  "name": "copymarkdown",
+  "displayName": "CopyMarkdown",
   "description": "Prepare a markdown code embedd. Usefull for sharing code on discord for example.",
-  "repository": {"type": "git", "url": "https://github.com/dolutattoo/copywithticks", "directory": "extension"},
-  "icon": "copywithticks_logo.png",
-  "version": "2.0.2",
+  "repository": {"type": "git", "url": "https://github.com/dolutattoo/copymarkdown", "directory": "extension"},
+  "icon": "copymarkdown_logo.png",
+  "version": "2.0.4",
   "publisher": "Dolu",
   "engines": {
     "vscode": "^1.82.0"
@@ -17,16 +17,16 @@
   "contributes": {
     "commands": [
       {
-        "command": "extension.copyWithTicks",
-        "title": "Copy with Ticks"
+        "command": "extension.copyMarkdown",
+        "title": "Copy as markdown code"
       }
     ],
     "menus": {
       "editor/context": [
         {
-          "command": "extension.copyWithTicks",
+          "command": "extension.copyMarkdown",
           "when": "editorHasSelection",
-          "group": "1_modification"
+          "group": "9_cutcopypaste"
         }
       ]
     }

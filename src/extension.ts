@@ -1,14 +1,10 @@
 import * as vscode from 'vscode';
 
 export function activate(context: vscode.ExtensionContext) {
-    console.log('Congratulations, your extension "copywithticks" is now active!');
-
-    let copyWithTicks = vscode.commands.registerCommand('extension.copyWithTicks', async () => {
+    let copyMarkdown = vscode.commands.registerCommand('extension.copyMarkdown', async () => {
         let editor = vscode.window.activeTextEditor;
 
         if (editor) {
-            // Prompt the user for the file extension, and add the current file extension as placeholder
-
             let document = editor.document;
             let selection = editor.selection;
             let selectedText = document.getText(selection);
@@ -22,11 +18,11 @@ export function activate(context: vscode.ExtensionContext) {
             let modifiedText = `\`\`\`${fileExtension}\n${selectedText}\n\`\`\``;
 
             vscode.env.clipboard.writeText(modifiedText);
-            vscode.window.showInformationMessage('Text copied with ticks and file extension!');
+            vscode.window.showInformationMessage('Code copied to clipboard');
         }
     });
 
-    context.subscriptions.push(copyWithTicks);
+    context.subscriptions.push(copyMarkdown);
 }
 
 export function deactivate() {}
