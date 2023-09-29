@@ -3,8 +3,8 @@
   "displayName": "CopyWithTicks",
   "description": "Prepare a markdown code embedd. Usefull for sharing code on discord for example.",
   "repository": {"type": "git", "url": "https://github.com/dolutattoo/copywithticks", "directory": "extension"},
-  "icon": "./copywithticks_logo.png",
-  "version": "2.0.1",
+  "icon": "copywithticks_logo.png",
+  "version": "2.0.2",
   "publisher": "Dolu",
   "engines": {
     "vscode": "^1.82.0"
